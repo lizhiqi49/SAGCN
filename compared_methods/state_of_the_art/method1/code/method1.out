@@ -1,0 +1,797 @@
+learning rate:  0.001
+epoch:  50
+batch size:  20
+device:  cuda
+data loaded
+===============Start Training==================
+-------------fold: 0-----------------
+Model_1(
+  (conv1): Conv1d(1, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 64, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 128, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(128, 256, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(128, 256, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(256, 512, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(256, 512, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (conv2): Conv1d(512, 512, kernel_size=(125,), stride=(1,), bias=False)
+  (linear1): Sequential(
+    (0): Linear(in_features=512, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+  )
+  (linear2): Linear(in_features=128, out_features=12, bias=True)
+)
+Epoch 000 train_loss: 592.0772 train_acc: 0.2188  test_loss: 148.7017 test_acc: 0.2242 
+Epoch 001 train_loss: 578.8944 train_acc: 0.2177  test_loss: 148.1474 test_acc: 0.2076 
+Epoch 002 train_loss: 544.7051 train_acc: 0.2802  test_loss: 139.2342 test_acc: 0.2697 
+Epoch 003 train_loss: 531.9587 train_acc: 0.2842  test_loss: 136.2242 test_acc: 0.2848 
+Epoch 004 train_loss: 686.1186 train_acc: 0.3019  test_loss: 162.6130 test_acc: 0.3068 
+Epoch 005 train_loss: 530.9523 train_acc: 0.2875  test_loss: 140.6030 test_acc: 0.2788 
+Epoch 006 train_loss: 504.8606 train_acc: 0.3096  test_loss: 129.9901 test_acc: 0.2924 
+Epoch 007 train_loss: 197.0694 train_acc: 0.7529  test_loss: 52.0092 test_acc: 0.7462 
+Epoch 008 train_loss: 116.1825 train_acc: 0.8579  test_loss: 32.2605 test_acc: 0.8439 
+Epoch 009 train_loss: 61.1305 train_acc: 0.9371  test_loss: 19.5722 test_acc: 0.9235 
+Epoch 010 train_loss: 52.8320 train_acc: 0.9433  test_loss: 18.0738 test_acc: 0.9242 
+Epoch 011 train_loss: 46.1557 train_acc: 0.9533  test_loss: 15.8827 test_acc: 0.9364 
+Epoch 012 train_loss: 39.9449 train_acc: 0.9529  test_loss: 16.6104 test_acc: 0.9288 
+Epoch 013 train_loss: 28.3888 train_acc: 0.9665  test_loss: 13.4522 test_acc: 0.9394 
+Epoch 014 train_loss: 55.8283 train_acc: 0.9412  test_loss: 22.8526 test_acc: 0.9008 
+Epoch 015 train_loss: 22.3926 train_acc: 0.9752  test_loss: 10.1171 test_acc: 0.9500 
+Epoch 016 train_loss: 41.0885 train_acc: 0.9577  test_loss: 19.3345 test_acc: 0.9250 
+Epoch 017 train_loss: 16.8756 train_acc: 0.9802  test_loss: 10.5814 test_acc: 0.9553 
+Epoch 018 train_loss: 22.5298 train_acc: 0.9771  test_loss: 19.9801 test_acc: 0.9515 
+Epoch 019 train_loss: 14.8463 train_acc: 0.9817  test_loss: 11.4472 test_acc: 0.9515 
+Epoch 020 train_loss: 8.9315 train_acc: 0.9890  test_loss: 8.5798 test_acc: 0.9652 
+Epoch 021 train_loss: 7.5390 train_acc: 0.9908  test_loss: 8.5647 test_acc: 0.9659 
+Epoch 022 train_loss: 6.4306 train_acc: 0.9912  test_loss: 9.3908 test_acc: 0.9621 
+Epoch 023 train_loss: 5.8421 train_acc: 0.9923  test_loss: 9.9691 test_acc: 0.9697 
+Epoch 024 train_loss: 4.1374 train_acc: 0.9946  test_loss: 10.2071 test_acc: 0.9682 
+Epoch 025 train_loss: 4.6272 train_acc: 0.9927  test_loss: 10.2480 test_acc: 0.9636 
+Epoch 026 train_loss: 4.2322 train_acc: 0.9946  test_loss: 9.6649 test_acc: 0.9629 
+Epoch 027 train_loss: 3.6286 train_acc: 0.9952  test_loss: 8.9339 test_acc: 0.9644 
+Epoch 028 train_loss: 2.9490 train_acc: 0.9969  test_loss: 9.6487 test_acc: 0.9682 
+Epoch 029 train_loss: 2.9096 train_acc: 0.9965  test_loss: 12.1180 test_acc: 0.9598 
+Epoch 030 train_loss: 3.5771 train_acc: 0.9960  test_loss: 9.5941 test_acc: 0.9659 
+Epoch 031 train_loss: 2.1220 train_acc: 0.9969  test_loss: 10.3300 test_acc: 0.9652 
+Epoch 032 train_loss: 1.7500 train_acc: 0.9988  test_loss: 10.1387 test_acc: 0.9659 
+Epoch 033 train_loss: 2.1334 train_acc: 0.9979  test_loss: 9.1947 test_acc: 0.9659 
+Epoch 034 train_loss: 1.4856 train_acc: 0.9985  test_loss: 10.8078 test_acc: 0.9667 
+Epoch 035 train_loss: 2.7745 train_acc: 0.9967  test_loss: 11.2302 test_acc: 0.9598 
+Epoch 036 train_loss: 2.0082 train_acc: 0.9977  test_loss: 12.1499 test_acc: 0.9667 
+Epoch 037 train_loss: 3.0169 train_acc: 0.9958  test_loss: 9.6850 test_acc: 0.9636 
+Epoch 038 train_loss: 3.0459 train_acc: 0.9967  test_loss: 12.4435 test_acc: 0.9568 
+Epoch 039 train_loss: 2.2705 train_acc: 0.9975  test_loss: 11.7063 test_acc: 0.9652 
+Epoch 040 train_loss: 0.8499 train_acc: 0.9988  test_loss: 10.3416 test_acc: 0.9667 
+Epoch 041 train_loss: 0.5933 train_acc: 0.9994  test_loss: 10.3627 test_acc: 0.9667 
+Epoch 042 train_loss: 0.5076 train_acc: 0.9998  test_loss: 9.7356 test_acc: 0.9674 
+Epoch 043 train_loss: 0.4698 train_acc: 0.9998  test_loss: 9.5005 test_acc: 0.9682 
+Epoch 044 train_loss: 0.3953 train_acc: 1.0000  test_loss: 9.7032 test_acc: 0.9689 
+Epoch 045 train_loss: 0.3697 train_acc: 1.0000  test_loss: 9.6512 test_acc: 0.9697 
+Epoch 046 train_loss: 0.3115 train_acc: 1.0000  test_loss: 9.7897 test_acc: 0.9689 
+Epoch 047 train_loss: 0.2966 train_acc: 0.9998  test_loss: 10.1323 test_acc: 0.9667 
+Epoch 048 train_loss: 0.2487 train_acc: 1.0000  test_loss: 10.4862 test_acc: 0.9712 
+Epoch 049 train_loss: 0.2063 train_acc: 1.0000  test_loss: 10.4623 test_acc: 0.9712 
+-------------fold: 1-----------------
+Model_1(
+  (conv1): Conv1d(1, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 64, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 128, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(128, 256, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(128, 256, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(256, 512, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(256, 512, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (conv2): Conv1d(512, 512, kernel_size=(125,), stride=(1,), bias=False)
+  (linear1): Sequential(
+    (0): Linear(in_features=512, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+  )
+  (linear2): Linear(in_features=128, out_features=12, bias=True)
+)
+Epoch 000 train_loss: 573.8032 train_acc: 0.2529  test_loss: 142.8789 test_acc: 0.2600 
+Epoch 001 train_loss: 555.3724 train_acc: 0.2695  test_loss: 137.3725 test_acc: 0.2654 
+Epoch 002 train_loss: 518.1320 train_acc: 0.3216  test_loss: 128.8761 test_acc: 0.3169 
+Epoch 003 train_loss: 486.0305 train_acc: 0.3534  test_loss: 121.7852 test_acc: 0.3469 
+Epoch 004 train_loss: 397.2044 train_acc: 0.4977  test_loss: 99.3169 test_acc: 0.4846 
+Epoch 005 train_loss: 147.5500 train_acc: 0.7866  test_loss: 42.1461 test_acc: 0.7685 
+Epoch 006 train_loss: 68.5322 train_acc: 0.9224  test_loss: 21.2326 test_acc: 0.9231 
+Epoch 007 train_loss: 175.1350 train_acc: 0.9425  test_loss: 54.9444 test_acc: 0.9254 
+Epoch 008 train_loss: 73.4118 train_acc: 0.9065  test_loss: 21.8934 test_acc: 0.8977 
+Epoch 009 train_loss: 34.7850 train_acc: 0.9577  test_loss: 16.0574 test_acc: 0.9346 
+Epoch 010 train_loss: 22.3200 train_acc: 0.9768  test_loss: 12.8785 test_acc: 0.9554 
+Epoch 011 train_loss: 16.5875 train_acc: 0.9824  test_loss: 14.9870 test_acc: 0.9515 
+Epoch 012 train_loss: 68.0187 train_acc: 0.9680  test_loss: 18.9170 test_acc: 0.9408 
+Epoch 013 train_loss: 17.2344 train_acc: 0.9808  test_loss: 12.7810 test_acc: 0.9546 
+Epoch 014 train_loss: 22.1179 train_acc: 0.9797  test_loss: 13.5620 test_acc: 0.9592 
+Epoch 015 train_loss: 26.0710 train_acc: 0.9697  test_loss: 15.6355 test_acc: 0.9469 
+Epoch 016 train_loss: 37.2977 train_acc: 0.9646  test_loss: 16.0295 test_acc: 0.9377 
+Epoch 017 train_loss: 20.6131 train_acc: 0.9764  test_loss: 15.3998 test_acc: 0.9485 
+Epoch 018 train_loss: 13.4912 train_acc: 0.9858  test_loss: 11.9688 test_acc: 0.9554 
+Epoch 019 train_loss: 13.3326 train_acc: 0.9858  test_loss: 15.4437 test_acc: 0.9531 
+Epoch 020 train_loss: 6.3654 train_acc: 0.9921  test_loss: 12.4568 test_acc: 0.9608 
+Epoch 021 train_loss: 4.2894 train_acc: 0.9954  test_loss: 11.6454 test_acc: 0.9623 
+Epoch 022 train_loss: 3.0652 train_acc: 0.9950  test_loss: 14.8050 test_acc: 0.9615 
+Epoch 023 train_loss: 3.7955 train_acc: 0.9966  test_loss: 13.3886 test_acc: 0.9654 
+Epoch 024 train_loss: 8.0190 train_acc: 0.9962  test_loss: 12.9522 test_acc: 0.9615 
+Epoch 025 train_loss: 2.1495 train_acc: 0.9971  test_loss: 14.3607 test_acc: 0.9623 
+Epoch 026 train_loss: 2.3331 train_acc: 0.9971  test_loss: 14.5476 test_acc: 0.9623 
+Epoch 027 train_loss: 3.1910 train_acc: 0.9973  test_loss: 13.5742 test_acc: 0.9646 
+Epoch 028 train_loss: 10.9623 train_acc: 0.9902  test_loss: 17.6233 test_acc: 0.9515 
+Epoch 029 train_loss: 2.3665 train_acc: 0.9981  test_loss: 13.6061 test_acc: 0.9623 
+Epoch 030 train_loss: 2.2564 train_acc: 0.9973  test_loss: 13.6863 test_acc: 0.9631 
+Epoch 031 train_loss: 2.9729 train_acc: 0.9977  test_loss: 13.7186 test_acc: 0.9600 
+Epoch 032 train_loss: 147.2801 train_acc: 0.9845  test_loss: 39.5738 test_acc: 0.9492 
+Epoch 033 train_loss: 1.5223 train_acc: 0.9985  test_loss: 14.0317 test_acc: 0.9600 
+Epoch 034 train_loss: 0.9109 train_acc: 0.9992  test_loss: 14.9048 test_acc: 0.9631 
+Epoch 035 train_loss: 0.7427 train_acc: 0.9989  test_loss: 16.4718 test_acc: 0.9623 
+Epoch 036 train_loss: 2.1233 train_acc: 0.9966  test_loss: 15.0326 test_acc: 0.9569 
+Epoch 037 train_loss: 2.5954 train_acc: 0.9973  test_loss: 18.0450 test_acc: 0.9592 
+Epoch 038 train_loss: 1.8442 train_acc: 0.9975  test_loss: 16.5851 test_acc: 0.9523 
+Epoch 039 train_loss: 1.3241 train_acc: 0.9981  test_loss: 15.6954 test_acc: 0.9577 
+Epoch 040 train_loss: 0.2729 train_acc: 1.0000  test_loss: 15.1682 test_acc: 0.9608 
+Epoch 041 train_loss: 0.2259 train_acc: 1.0000  test_loss: 14.8980 test_acc: 0.9623 
+Epoch 042 train_loss: 0.1959 train_acc: 1.0000  test_loss: 14.6383 test_acc: 0.9631 
+Epoch 043 train_loss: 0.2316 train_acc: 1.0000  test_loss: 15.0800 test_acc: 0.9615 
+Epoch 044 train_loss: 0.1591 train_acc: 1.0000  test_loss: 15.1445 test_acc: 0.9623 
+Epoch 045 train_loss: 0.1719 train_acc: 1.0000  test_loss: 14.5550 test_acc: 0.9608 
+Epoch 046 train_loss: 0.1438 train_acc: 1.0000  test_loss: 15.2625 test_acc: 0.9623 
+Epoch 047 train_loss: 0.1689 train_acc: 1.0000  test_loss: 14.8514 test_acc: 0.9577 
+Epoch 048 train_loss: 0.1623 train_acc: 1.0000  test_loss: 15.3370 test_acc: 0.9662 
+Epoch 049 train_loss: 0.1670 train_acc: 0.9998  test_loss: 14.0293 test_acc: 0.9638 
+-------------fold: 2-----------------
+Model_1(
+  (conv1): Conv1d(1, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 64, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 128, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(128, 256, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(128, 256, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(256, 512, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(256, 512, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (conv2): Conv1d(512, 512, kernel_size=(125,), stride=(1,), bias=False)
+  (linear1): Sequential(
+    (0): Linear(in_features=512, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+  )
+  (linear2): Linear(in_features=128, out_features=12, bias=True)
+)
+Epoch 000 train_loss: 644.0000 train_acc: 0.1285  test_loss: 160.3786 test_acc: 0.1292 
+Epoch 001 train_loss: 641.1421 train_acc: 0.1285  test_loss: 159.6308 test_acc: 0.1292 
+Epoch 002 train_loss: 596.1167 train_acc: 0.1998  test_loss: 147.6210 test_acc: 0.2038 
+Epoch 003 train_loss: 601.5508 train_acc: 0.1914  test_loss: 148.6833 test_acc: 0.1954 
+Epoch 004 train_loss: 639.1786 train_acc: 0.1287  test_loss: 159.0644 test_acc: 0.1292 
+Epoch 005 train_loss: 585.4483 train_acc: 0.2080  test_loss: 145.5065 test_acc: 0.2123 
+Epoch 006 train_loss: 639.4452 train_acc: 0.1285  test_loss: 159.2814 test_acc: 0.1292 
+Epoch 007 train_loss: 638.4828 train_acc: 0.1285  test_loss: 159.0357 test_acc: 0.1292 
+Epoch 008 train_loss: 637.6876 train_acc: 0.1324  test_loss: 158.9129 test_acc: 0.1292 
+Epoch 009 train_loss: 637.7949 train_acc: 0.1285  test_loss: 158.8435 test_acc: 0.1292 
+Epoch 010 train_loss: 637.4819 train_acc: 0.1285  test_loss: 158.8038 test_acc: 0.1292 
+Epoch 011 train_loss: 637.1858 train_acc: 0.1322  test_loss: 158.7823 test_acc: 0.1292 
+Epoch 012 train_loss: 637.4781 train_acc: 0.1285  test_loss: 158.7729 test_acc: 0.1292 
+Epoch 013 train_loss: 637.6389 train_acc: 0.1285  test_loss: 158.7679 test_acc: 0.1292 
+Epoch 014 train_loss: 637.3363 train_acc: 0.1285  test_loss: 158.7637 test_acc: 0.1292 
+Epoch 015 train_loss: 637.4019 train_acc: 0.1285  test_loss: 158.7675 test_acc: 0.1292 
+Epoch 016 train_loss: 637.6272 train_acc: 0.1285  test_loss: 158.7650 test_acc: 0.1292 
+
+Restart traning
+Change learning rate to  0.0002
+Model_1(
+  (conv1): Conv1d(1, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 64, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 128, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(128, 256, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(128, 256, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(256, 512, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(256, 512, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (conv2): Conv1d(512, 512, kernel_size=(125,), stride=(1,), bias=False)
+  (linear1): Sequential(
+    (0): Linear(in_features=512, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+  )
+  (linear2): Linear(in_features=128, out_features=12, bias=True)
+)
+Epoch 000 train_loss: 187.7014 train_acc: 0.7983  test_loss: 48.9518 test_acc: 0.7962 
+Epoch 001 train_loss: 75.5739 train_acc: 0.9243  test_loss: 22.7272 test_acc: 0.9015 
+Epoch 002 train_loss: 48.7218 train_acc: 0.9508  test_loss: 17.9716 test_acc: 0.9331 
+Epoch 003 train_loss: 24.5459 train_acc: 0.9707  test_loss: 12.7634 test_acc: 0.9577 
+Epoch 004 train_loss: 24.1357 train_acc: 0.9713  test_loss: 15.5206 test_acc: 0.9615 
+Epoch 005 train_loss: 22.1026 train_acc: 0.9716  test_loss: 13.7666 test_acc: 0.9562 
+Epoch 006 train_loss: 16.9552 train_acc: 0.9807  test_loss: 13.2856 test_acc: 0.9615 
+Epoch 007 train_loss: 10.7971 train_acc: 0.9875  test_loss: 15.1817 test_acc: 0.9662 
+Epoch 008 train_loss: 19.0335 train_acc: 0.9770  test_loss: 17.2784 test_acc: 0.9554 
+Epoch 009 train_loss: 23.0496 train_acc: 0.9772  test_loss: 15.3922 test_acc: 0.9515 
+Epoch 010 train_loss: 12.4684 train_acc: 0.9852  test_loss: 17.4299 test_acc: 0.9600 
+Epoch 011 train_loss: 9.6379 train_acc: 0.9866  test_loss: 8.7994 test_acc: 0.9646 
+Epoch 012 train_loss: 14.0128 train_acc: 0.9808  test_loss: 14.0427 test_acc: 0.9546 
+Epoch 013 train_loss: 6.6331 train_acc: 0.9920  test_loss: 14.2058 test_acc: 0.9646 
+Epoch 014 train_loss: 7.5940 train_acc: 0.9908  test_loss: 11.8636 test_acc: 0.9623 
+Epoch 015 train_loss: 3.4407 train_acc: 0.9958  test_loss: 13.9947 test_acc: 0.9685 
+Epoch 016 train_loss: 9.5781 train_acc: 0.9891  test_loss: 14.0994 test_acc: 0.9577 
+Epoch 017 train_loss: 11.5354 train_acc: 0.9856  test_loss: 13.1733 test_acc: 0.9654 
+Epoch 018 train_loss: 3.9371 train_acc: 0.9962  test_loss: 10.5292 test_acc: 0.9654 
+Epoch 019 train_loss: 3.0489 train_acc: 0.9954  test_loss: 14.8126 test_acc: 0.9662 
+Epoch 020 train_loss: 0.6706 train_acc: 0.9994  test_loss: 12.1147 test_acc: 0.9723 
+Epoch 021 train_loss: 0.3405 train_acc: 0.9998  test_loss: 12.9900 test_acc: 0.9715 
+Epoch 022 train_loss: 0.1774 train_acc: 1.0000  test_loss: 13.1320 test_acc: 0.9700 
+Epoch 023 train_loss: 0.2413 train_acc: 0.9996  test_loss: 13.9762 test_acc: 0.9692 
+Epoch 024 train_loss: 0.0654 train_acc: 1.0000  test_loss: 13.8659 test_acc: 0.9692 
+Epoch 025 train_loss: 0.0498 train_acc: 1.0000  test_loss: 13.6089 test_acc: 0.9708 
+Epoch 026 train_loss: 0.0351 train_acc: 1.0000  test_loss: 14.4659 test_acc: 0.9708 
+Epoch 027 train_loss: 1.8227 train_acc: 0.9981  test_loss: 13.4941 test_acc: 0.9715 
+Epoch 028 train_loss: 0.1448 train_acc: 0.9998  test_loss: 14.5737 test_acc: 0.9685 
+Epoch 029 train_loss: 0.0183 train_acc: 1.0000  test_loss: 14.5412 test_acc: 0.9723 
+Epoch 030 train_loss: 0.0289 train_acc: 1.0000  test_loss: 12.3658 test_acc: 0.9685 
+Epoch 031 train_loss: 0.0063 train_acc: 1.0000  test_loss: 13.2607 test_acc: 0.9731 
+Epoch 032 train_loss: 0.0225 train_acc: 1.0000  test_loss: 14.8529 test_acc: 0.9762 
+Epoch 033 train_loss: 0.2635 train_acc: 0.9996  test_loss: 16.5455 test_acc: 0.9662 
+Epoch 034 train_loss: 0.3871 train_acc: 0.9996  test_loss: 13.3126 test_acc: 0.9685 
+Epoch 035 train_loss: 0.1433 train_acc: 1.0000  test_loss: 12.8435 test_acc: 0.9692 
+Epoch 036 train_loss: 0.2021 train_acc: 0.9996  test_loss: 12.3449 test_acc: 0.9746 
+Epoch 037 train_loss: 3.2180 train_acc: 0.9954  test_loss: 17.9720 test_acc: 0.9592 
+Epoch 038 train_loss: 0.0761 train_acc: 1.0000  test_loss: 12.4374 test_acc: 0.9692 
+Epoch 039 train_loss: 0.0551 train_acc: 1.0000  test_loss: 12.1526 test_acc: 0.9723 
+Epoch 040 train_loss: 0.0173 train_acc: 1.0000  test_loss: 12.8388 test_acc: 0.9723 
+Epoch 041 train_loss: 0.0157 train_acc: 1.0000  test_loss: 11.6018 test_acc: 0.9715 
+Epoch 042 train_loss: 0.0062 train_acc: 1.0000  test_loss: 12.9518 test_acc: 0.9715 
+Epoch 043 train_loss: 0.0046 train_acc: 1.0000  test_loss: 13.0614 test_acc: 0.9715 
+Epoch 044 train_loss: 0.0121 train_acc: 1.0000  test_loss: 13.1222 test_acc: 0.9685 
+Epoch 045 train_loss: 0.0035 train_acc: 1.0000  test_loss: 13.1989 test_acc: 0.9723 
+Epoch 046 train_loss: 0.0071 train_acc: 1.0000  test_loss: 11.5325 test_acc: 0.9708 
+Epoch 047 train_loss: 0.0033 train_acc: 1.0000  test_loss: 12.6207 test_acc: 0.9700 
+Epoch 048 train_loss: 0.0036 train_acc: 1.0000  test_loss: 12.3251 test_acc: 0.9708 
+Epoch 049 train_loss: 0.0040 train_acc: 1.0000  test_loss: 12.1843 test_acc: 0.9715 
+-------------fold: 3-----------------
+Model_1(
+  (conv1): Conv1d(1, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 64, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 128, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(128, 256, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(128, 256, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(256, 512, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(256, 512, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (conv2): Conv1d(512, 512, kernel_size=(125,), stride=(1,), bias=False)
+  (linear1): Sequential(
+    (0): Linear(in_features=512, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+  )
+  (linear2): Linear(in_features=128, out_features=12, bias=True)
+)
+Epoch 000 train_loss: 644.3587 train_acc: 0.1285  test_loss: 160.4662 test_acc: 0.1292 
+Epoch 001 train_loss: 641.3845 train_acc: 0.1285  test_loss: 159.6982 test_acc: 0.1292 
+Epoch 002 train_loss: 639.3556 train_acc: 0.1285  test_loss: 159.2679 test_acc: 0.1292 
+Epoch 003 train_loss: 638.4998 train_acc: 0.1285  test_loss: 159.0357 test_acc: 0.1292 
+Epoch 004 train_loss: 637.8380 train_acc: 0.1285  test_loss: 158.9079 test_acc: 0.1292 
+Epoch 005 train_loss: 625.6575 train_acc: 0.1623  test_loss: 155.9258 test_acc: 0.1577 
+Epoch 006 train_loss: 637.8980 train_acc: 0.1285  test_loss: 158.8081 test_acc: 0.1292 
+Epoch 007 train_loss: 637.8555 train_acc: 0.1285  test_loss: 158.7859 test_acc: 0.1292 
+Epoch 008 train_loss: 2363.7715 train_acc: 0.1697  test_loss: 570.4308 test_acc: 0.1769 
+Epoch 009 train_loss: 637.6474 train_acc: 0.1285  test_loss: 158.7725 test_acc: 0.1292 
+Epoch 010 train_loss: 525.8500 train_acc: 0.3044  test_loss: 131.0825 test_acc: 0.2931 
+Epoch 011 train_loss: 144.4450 train_acc: 0.8274  test_loss: 40.5498 test_acc: 0.8162 
+Epoch 012 train_loss: 50.1105 train_acc: 0.9387  test_loss: 18.3750 test_acc: 0.9254 
+Epoch 013 train_loss: 33.9303 train_acc: 0.9667  test_loss: 12.1599 test_acc: 0.9515 
+Epoch 014 train_loss: 43.9766 train_acc: 0.9492  test_loss: 15.6155 test_acc: 0.9346 
+Epoch 015 train_loss: 18.3422 train_acc: 0.9805  test_loss: 10.0609 test_acc: 0.9531 
+Epoch 016 train_loss: 23.3886 train_acc: 0.9736  test_loss: 10.2402 test_acc: 0.9546 
+Epoch 017 train_loss: 19.2260 train_acc: 0.9755  test_loss: 12.5359 test_acc: 0.9538 
+Epoch 018 train_loss: 14.3278 train_acc: 0.9845  test_loss: 9.8230 test_acc: 0.9600 
+Epoch 019 train_loss: 12.0845 train_acc: 0.9858  test_loss: 9.4272 test_acc: 0.9623 
+Epoch 020 train_loss: 4.8606 train_acc: 0.9939  test_loss: 7.7883 test_acc: 0.9754 
+Epoch 021 train_loss: 3.7511 train_acc: 0.9958  test_loss: 8.1258 test_acc: 0.9731 
+Epoch 022 train_loss: 3.2821 train_acc: 0.9966  test_loss: 8.0266 test_acc: 0.9731 
+Epoch 023 train_loss: 2.7007 train_acc: 0.9960  test_loss: 8.8046 test_acc: 0.9723 
+Epoch 024 train_loss: 2.5437 train_acc: 0.9969  test_loss: 8.1107 test_acc: 0.9731 
+Epoch 025 train_loss: 1.9137 train_acc: 0.9977  test_loss: 9.3923 test_acc: 0.9723 
+Epoch 026 train_loss: 1.6621 train_acc: 0.9985  test_loss: 7.8922 test_acc: 0.9731 
+Epoch 027 train_loss: 2.3651 train_acc: 0.9971  test_loss: 8.8242 test_acc: 0.9700 
+Epoch 028 train_loss: 1.3232 train_acc: 0.9987  test_loss: 9.2529 test_acc: 0.9692 
+Epoch 029 train_loss: 3.4096 train_acc: 0.9958  test_loss: 11.7279 test_acc: 0.9631 
+Epoch 030 train_loss: 1.6007 train_acc: 0.9985  test_loss: 9.3141 test_acc: 0.9677 
+Epoch 031 train_loss: 3.8856 train_acc: 0.9946  test_loss: 9.8476 test_acc: 0.9677 
+Epoch 032 train_loss: 1.7667 train_acc: 0.9985  test_loss: 11.1231 test_acc: 0.9662 
+Epoch 033 train_loss: 4.3477 train_acc: 0.9952  test_loss: 10.0903 test_acc: 0.9623 
+Epoch 034 train_loss: 0.8881 train_acc: 0.9996  test_loss: 9.6703 test_acc: 0.9715 
+Epoch 035 train_loss: 1.3644 train_acc: 0.9994  test_loss: 9.2279 test_acc: 0.9677 
+Epoch 036 train_loss: 3.4819 train_acc: 0.9950  test_loss: 10.4143 test_acc: 0.9646 
+Epoch 037 train_loss: 0.8455 train_acc: 0.9990  test_loss: 10.1385 test_acc: 0.9723 
+Epoch 038 train_loss: 1.6113 train_acc: 0.9983  test_loss: 9.6171 test_acc: 0.9677 
+Epoch 039 train_loss: 2.0539 train_acc: 0.9969  test_loss: 11.8828 test_acc: 0.9692 
+Epoch 040 train_loss: 0.3149 train_acc: 0.9998  test_loss: 9.6013 test_acc: 0.9762 
+Epoch 041 train_loss: 0.2873 train_acc: 1.0000  test_loss: 9.8292 test_acc: 0.9754 
+Epoch 042 train_loss: 0.2148 train_acc: 1.0000  test_loss: 9.7027 test_acc: 0.9762 
+Epoch 043 train_loss: 0.2025 train_acc: 1.0000  test_loss: 9.5845 test_acc: 0.9769 
+Epoch 044 train_loss: 0.1709 train_acc: 1.0000  test_loss: 9.8891 test_acc: 0.9754 
+Epoch 045 train_loss: 0.1540 train_acc: 1.0000  test_loss: 9.5768 test_acc: 0.9777 
+Epoch 046 train_loss: 0.1279 train_acc: 1.0000  test_loss: 9.9859 test_acc: 0.9769 
+Epoch 047 train_loss: 0.1294 train_acc: 1.0000  test_loss: 9.5729 test_acc: 0.9762 
+Epoch 048 train_loss: 0.1131 train_acc: 1.0000  test_loss: 10.0143 test_acc: 0.9754 
+Epoch 049 train_loss: 0.0997 train_acc: 1.0000  test_loss: 10.2293 test_acc: 0.9746 
+-------------fold: 4-----------------
+Model_1(
+  (conv1): Conv1d(1, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+  (layer1): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 64, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer2): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(64, 128, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(128, 256, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(128, 256, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv1d(256, 512, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential(
+        (0): Conv1d(256, 512, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+      (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (shortcut): Sequential()
+    )
+  )
+  (conv2): Conv1d(512, 512, kernel_size=(125,), stride=(1,), bias=False)
+  (linear1): Sequential(
+    (0): Linear(in_features=512, out_features=128, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.5, inplace=False)
+  )
+  (linear2): Linear(in_features=128, out_features=12, bias=True)
+)
+Epoch 000 train_loss: 645.1848 train_acc: 0.1287  test_loss: 160.6827 test_acc: 0.1285 
+Epoch 001 train_loss: 641.5271 train_acc: 0.1324  test_loss: 159.8109 test_acc: 0.1285 
+Epoch 002 train_loss: 639.9292 train_acc: 0.1287  test_loss: 159.3268 test_acc: 0.1285 
+Epoch 003 train_loss: 638.9027 train_acc: 0.1287  test_loss: 159.0710 test_acc: 0.1285 
+Epoch 004 train_loss: 637.8139 train_acc: 0.1324  test_loss: 158.9296 test_acc: 0.1285 
+Epoch 005 train_loss: 637.4860 train_acc: 0.1324  test_loss: 158.8550 test_acc: 0.1285 
+Epoch 006 train_loss: 637.5852 train_acc: 0.1287  test_loss: 158.8137 test_acc: 0.1285 
+Epoch 007 train_loss: 637.4967 train_acc: 0.1287  test_loss: 158.7982 test_acc: 0.1285 
+Epoch 008 train_loss: 637.4871 train_acc: 0.1287  test_loss: 158.7856 test_acc: 0.1285 
+Epoch 009 train_loss: 637.3468 train_acc: 0.1287  test_loss: 158.7789 test_acc: 0.1285 
+Epoch 010 train_loss: 637.1159 train_acc: 0.1324  test_loss: 158.7757 test_acc: 0.1285 
+Epoch 011 train_loss: 598.3963 train_acc: 0.3038  test_loss: 154.9593 test_acc: 0.2962 
+Epoch 012 train_loss: 102.2625 train_acc: 0.8866  test_loss: 30.1363 test_acc: 0.8692 
+Epoch 013 train_loss: 27.8529 train_acc: 0.9661  test_loss: 14.2507 test_acc: 0.9438 
+Epoch 014 train_loss: 25.7226 train_acc: 0.9676  test_loss: 13.4885 test_acc: 0.9338 
+Epoch 015 train_loss: 22.6940 train_acc: 0.9738  test_loss: 12.8671 test_acc: 0.9423 
+Epoch 016 train_loss: 17.4960 train_acc: 0.9772  test_loss: 12.8334 test_acc: 0.9554 
+Epoch 017 train_loss: 19.1225 train_acc: 0.9780  test_loss: 12.2527 test_acc: 0.9477 
+Epoch 018 train_loss: 15.3152 train_acc: 0.9803  test_loss: 13.1652 test_acc: 0.9415 
+Epoch 019 train_loss: 10.9175 train_acc: 0.9866  test_loss: 11.6765 test_acc: 0.9577 
+Epoch 020 train_loss: 5.9772 train_acc: 0.9912  test_loss: 10.7258 test_acc: 0.9608 
+Epoch 021 train_loss: 4.4861 train_acc: 0.9944  test_loss: 11.1152 test_acc: 0.9638 
+Epoch 022 train_loss: 3.1986 train_acc: 0.9960  test_loss: 11.0643 test_acc: 0.9615 
+Epoch 023 train_loss: 2.6976 train_acc: 0.9964  test_loss: 11.1643 test_acc: 0.9654 
+Epoch 024 train_loss: 2.4986 train_acc: 0.9971  test_loss: 11.3222 test_acc: 0.9623 
+Epoch 025 train_loss: 2.9620 train_acc: 0.9962  test_loss: 12.6011 test_acc: 0.9638 
+Epoch 026 train_loss: 2.9377 train_acc: 0.9962  test_loss: 14.0333 test_acc: 0.9585 
+Epoch 027 train_loss: 2.7336 train_acc: 0.9967  test_loss: 13.4759 test_acc: 0.9531 
+Epoch 028 train_loss: 1.5235 train_acc: 0.9981  test_loss: 10.6554 test_acc: 0.9600 
+Epoch 029 train_loss: 1.0228 train_acc: 0.9992  test_loss: 12.1209 test_acc: 0.9600 
+Epoch 030 train_loss: 1.4525 train_acc: 0.9983  test_loss: 10.9488 test_acc: 0.9638 
+Epoch 031 train_loss: 1.2765 train_acc: 0.9990  test_loss: 12.0860 test_acc: 0.9554 
+Epoch 032 train_loss: 5.9929 train_acc: 0.9912  test_loss: 15.8443 test_acc: 0.9531 
+Epoch 033 train_loss: 1.6723 train_acc: 0.9981  test_loss: 13.9894 test_acc: 0.9592 
+Epoch 034 train_loss: 0.8304 train_acc: 0.9994  test_loss: 12.7958 test_acc: 0.9592 
+Epoch 035 train_loss: 0.9586 train_acc: 0.9989  test_loss: 12.0582 test_acc: 0.9623 
+Epoch 036 train_loss: 1.2742 train_acc: 0.9985  test_loss: 11.7397 test_acc: 0.9654 
+Epoch 037 train_loss: 2.6206 train_acc: 0.9973  test_loss: 12.7747 test_acc: 0.9577 
+Epoch 038 train_loss: 4.7697 train_acc: 0.9952  test_loss: 15.3157 test_acc: 0.9531 
+Epoch 039 train_loss: 0.9343 train_acc: 0.9996  test_loss: 12.7319 test_acc: 0.9615 
+Epoch 040 train_loss: 0.2220 train_acc: 1.0000  test_loss: 12.1941 test_acc: 0.9623 
+Epoch 041 train_loss: 0.1712 train_acc: 1.0000  test_loss: 12.3874 test_acc: 0.9646 
+Epoch 042 train_loss: 0.1495 train_acc: 1.0000  test_loss: 12.4336 test_acc: 0.9638 
+Epoch 043 train_loss: 0.1533 train_acc: 1.0000  test_loss: 12.1755 test_acc: 0.9669 
+Epoch 044 train_loss: 0.1223 train_acc: 1.0000  test_loss: 12.7538 test_acc: 0.9631 
+Epoch 045 train_loss: 0.1032 train_acc: 1.0000  test_loss: 12.7225 test_acc: 0.9638 
+Epoch 046 train_loss: 0.1058 train_acc: 1.0000  test_loss: 13.1788 test_acc: 0.9608 
+Epoch 047 train_loss: 0.1079 train_acc: 1.0000  test_loss: 12.6826 test_acc: 0.9631 
+Epoch 048 train_loss: 0.1098 train_acc: 1.0000  test_loss: 12.5074 test_acc: 0.9654 
+Epoch 049 train_loss: 0.0966 train_acc: 1.0000  test_loss: 12.8183 test_acc: 0.9646 

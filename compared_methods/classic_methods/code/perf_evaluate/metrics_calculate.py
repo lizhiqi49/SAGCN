@@ -112,8 +112,8 @@ def computeMetrics(y_real_label, y_probas, output_path):
     results = np.array(results)
     means = np.mean(results, axis=0)
     stds = np.std(results, axis=0)
-    means_df = pd.DataFrame(means, index=metric_df.index, columns=metric_df.columns)
-    stds_df = pd.DataFrame(stds, index=metric_df.index, columns=metric_df.columns)
+    means_df = pd.DataFrame(means, index=metric_df.index, columns=metric_df.columns+'_avg')
+    stds_df = pd.DataFrame(stds, index=metric_df.index, columns=metric_df.columns+'_std')
     result_df = pd.concat([means_df, stds_df], axis=1)
 
     result_df.to_csv(output_path)
