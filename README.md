@@ -2,12 +2,6 @@
 
 ---
 
-## Overview
-
-
-
----
-
 ## Software requirements
 
 * Python 3.8.8
@@ -33,15 +27,13 @@
 
 ## Repo content explanation
 
-### TCGA_dataset_project
-
 #### TCGA_clinical_data folder
 
 * contains the clinical information of dataset from TCGA, in *biospecimen*, *clinical* and *finish* folders; 
 * two script, `merge_file.py` and `statistic.py` to summarize the information;
 * the summary of clinical information: `clinical_info_statistic.csv`;
 
-#### code
+#### code folder
 
 * *preprocessing* folder contains the scripts to preprocess the dataset.
 * *sagcn* folder:
@@ -49,41 +41,20 @@
   * `sagcn_kfold.py`: train SAGCN model based on the created graphs and extract DEMs from every input graph;
   * `selectProbes.py`: select the final DEMs from SAGCN's output
 * *sample_classification* folder contains the scripts to perform clinical sample classification based on the DEMs from SAGCN
-* *performance_evaluation* folder contains the scripts to perform performance evaluation on SAGCN model and clinical classification.
+* *performance_evaluation* folder contains the scripts to perform performance evaluation on SAGCN model and clinical sample classification.
 
-#### data
+#### compared_methods folder
 
-contains the intermediate files generated from pipeline.
+* *classic_methods* folder contains the code implementation and experimental results of the traditional machine learning algorithms on the clinical sample classification task of this study
+* *state_of_the_art* folder contains the code implementation and experimental results of two state-of-the-art algorithms on the task of this study
 
-#### prediction_results
+#### selected_probes_350_annotated.csv
 
-contains the prediction results of SAGCN model and the follow clinical sample classification.
+The selected 350 probes by SAGCN and their annotation.
 
-#### perf_evaluation_results
+#### model_svc_tcga.pkl
 
-contains the evaluation results based on the prediction results.
-
-
-
-### GEO_dataset _project
-
-###
-
-
-
-### compared_methods
-
-#### classic_methods
-
-###
-
-#### state_of_the_art
-
-###
-
-### case_study
-
-###
+The trained SVM classifier based on the TCGA dataset with the beta values of selected 350 probes as  sample feature.
 
 
 
